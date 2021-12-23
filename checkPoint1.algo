@@ -1,0 +1,22 @@
+ALGORITHM algorithm_name
+VAR
+    l:INTEGER=0
+    sumWords:INTEGER=1
+    sumVowels:INTEGER=0
+    phrase:STRING
+    i:INTEGER
+BEGIN
+read(phrase.toLower)
+    FOR i FROM 0 TO phrase.length-1 STEP 1  DO
+        l++
+        IF (phrase[i]=' ') THEN
+            sumWords++
+        END_IF
+        IF (phrase[i] = 'a' OR phrase[i] = 'e' OR phrase[i] = 'o' OR phrase[i] = 'i' OR phrase[i] = 'y' ) THEN
+            sumVowels++
+        END_IF
+    END_FOR
+    write('length of phrase is ',l)
+    write('number of words in this phrase is ',sumWords)
+    write('number of vowels in this phrase is ',sumVowels)
+END
