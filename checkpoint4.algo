@@ -1,0 +1,21 @@
+PROCEDURE swap(VAR a,b:INTEGER)
+VAR
+    x:INTEGER
+BEGIN
+    x=a
+    a=b
+    b=x
+END
+ALGORITHM sortInsertion
+VAR
+    tab:ARRAY_OF INTEGER
+    i,j:INTEGER
+BEGIN
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+       j=i
+        WHILE (j>0,tab[j-1]>tab[j]) DO
+             swap(tab[j-1],tab[j]))
+             j--
+        END_WHILE
+    END_FOR
+END

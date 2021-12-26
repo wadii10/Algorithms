@@ -1,0 +1,35 @@
+PROCEDURE dotProduct(v1,v2: ARRAY_OF FLOAT,VAR ps:FLOAT)
+VAR
+    m:INTEGER=v1.length-1
+    n:INTEGER=v2.length-1
+    i:INTEGER
+    ps:=0
+BEGIN
+    IF (n<>m) THEN
+        write("we can'tdo it")
+        ps:=NAN
+        break
+    END_IF
+    FOR i FROM 0 TO m STEP 1 DO
+        ps:=ps+v1[i]*v2[i]
+    END_FOR
+    write(ps)
+END
+
+ALGORITHM orth
+VAR
+    vectors : ARRAY_OF array
+    x:INTEGER=vectors.length-1
+    i,j:INTEGER
+    ps:FLOAT
+BEGIN
+    FOR i FROM 1 TO x-1 STEP step  DO
+        FOR j FROM i+1 TO x STEP step  DO
+            dotProduct(vectors[i],vectors[j],ps)
+            IF (ps:=0) THEN
+                write(vectors[i],', 'vectors[j],'are orth')
+            END_IF
+        END_FOR
+    END_FOR
+    
+END
